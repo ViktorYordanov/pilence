@@ -20,10 +20,12 @@ security:
                 login_path: app_login
                 check_path: app_login
                 enable_csrf: true
+                # after a successful login, send the user straight to the admin panel
+                default_target_path: admin
             logout:
                 path: app_logout
-                # where to redirect after logout
-                # target: app_any_route
+                # after logout, return to the login page
+                target: app_login
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -34,7 +36,8 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # the entire admin panel requires an authenticated admin user
+        - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
 
 when@test:

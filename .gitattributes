@@ -1,0 +1,7 @@
+# Keep files executed inside the Linux container as LF, or their shebangs break
+*.sh text eol=lf
+bin/console text eol=lf
+bin/phpunit text eol=lf
+frankenphp/docker-entrypoint.sh text eol=lf
+Dockerfile text eol=lf
+frankenphp/Caddyfile text eol=lf

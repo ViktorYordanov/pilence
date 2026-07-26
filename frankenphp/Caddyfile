@@ -1,0 +1,18 @@
+{
+	{$CADDY_GLOBAL_OPTIONS}
+
+	frankenphp
+}
+
+{$CADDY_EXTRA_CONFIG}
+
+{$SERVER_NAME:localhost} {
+	log
+
+	root public/
+	encode zstd br gzip
+
+	{$CADDY_SERVER_EXTRA_DIRECTIVES}
+
+	php_server
+}

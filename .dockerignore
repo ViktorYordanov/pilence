@@ -1,0 +1,14 @@
+.dockerignore
+.git/
+.github/
+.idea/
+compose.yaml
+compose.override.yaml
+compose.*.yaml
+Dockerfile
+/tests/
+/var/
+/vendor/
+.env.local
+.env.*.local
+.env.local.php
