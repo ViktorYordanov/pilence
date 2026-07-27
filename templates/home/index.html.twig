@@ -1,0 +1,114 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pilence — Home{% endblock %}
+
+{% block body %}
+    <header class="site-header" data-controller="nav">
+        <div class="site-header__inner">
+            <a href="{{ path('app_home') }}" class="brand">Pilence</a>
+
+            <button
+                type="button"
+                class="nav-toggle"
+                data-action="nav#toggle"
+                data-nav-target="button"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+            >
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="site-nav" data-nav-target="menu" aria-label="Primary">
+                <ul>
+                    <li><a href="{{ path('app_home') }}" class="is-active">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <p class="hero__eyebrow">Welcome</p>
+                <h1 class="hero__title">Building thoughtful software.</h1>
+                <p class="hero__lead">
+                    A home for my projects, services, and the work I care about.
+                </p>
+                <div class="hero__actions">
+                    <a href="#projects" class="btn btn--primary">View projects</a>
+                    <a href="#about" class="btn btn--ghost">About me</a>
+                </div>
+
+                <div class="hero__art" data-controller="svg-animation" aria-hidden="true">
+                    <svg viewBox="0 0 240 160" width="240" height="160" role="img">
+                        <rect data-svg-animation-target="shape" x="20" y="60" width="60" height="80" rx="8" fill="#4f46e5" />
+                        <rect data-svg-animation-target="shape" x="90" y="30" width="60" height="110" rx="8" fill="#7c3aed" />
+                        <rect data-svg-animation-target="shape" x="160" y="80" width="60" height="60" rx="8" fill="#ec4899" />
+                        <circle data-svg-animation-target="shape" cx="50" cy="30" r="14" fill="#22d3ee" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section__title">Projects</h2>
+                <p class="section__lead">A selection of things I've built.</p>
+                <div class="card-grid">
+                    <article class="card">
+                        <h3 class="card__title">Project one</h3>
+                        <p class="card__text">Short description of the project and the problem it solves.</p>
+                    </article>
+                    <article class="card">
+                        <h3 class="card__title">Project two</h3>
+                        <p class="card__text">Short description of the project and the problem it solves.</p>
+                    </article>
+                    <article class="card">
+                        <h3 class="card__title">Project three</h3>
+                        <p class="card__text">Short description of the project and the problem it solves.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section section--muted">
+            <div class="container">
+                <h2 class="section__title">Services</h2>
+                <p class="section__lead">How I can help.</p>
+                <div class="card-grid">
+                    <article class="card">
+                        <h3 class="card__title">Web development</h3>
+                        <p class="card__text">Modern, maintainable web applications built to last.</p>
+                    </article>
+                    <article class="card">
+                        <h3 class="card__title">Consulting</h3>
+                        <p class="card__text">Architecture reviews and technical guidance for your team.</p>
+                    </article>
+                    <article class="card">
+                        <h3 class="card__title">Maintenance</h3>
+                        <p class="card__text">Keeping existing applications healthy, secure, and up to date.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container container--narrow">
+                <h2 class="section__title">About me</h2>
+                <p class="section__text">
+                    Write a short introduction here — who you are, what you do, and what
+                    drives your work. This section is a placeholder ready for your own words.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; {{ 'now'|date('Y') }} Pilence. All rights reserved.</p>
+        </div>
+    </footer>
+{% endblock %}
