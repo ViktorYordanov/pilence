@@ -3,9 +3,11 @@
 
 nav:
     home: Начало
-    projects: Проекти
     services: Услуги
+    portfolio: Портфолио
     about: За мен
+    contacts: Контакти
+    toggle: Меню
 
 language:
     label: Език
@@ -17,12 +19,24 @@ hero:
     eyebrow: Добре дошли
     title: Създаваме обмислен софтуер.
     lead: Дом за моите проекти, услуги и работата, която ме вълнува.
-    view_projects: Виж проектите
+    view_portfolio: Виж портфолиото
     about_me: За мен
 
-projects:
-    title: Проекти
+portfolio:
+    title: Портфолио
     lead: Подбор от неща, които съм изградил.
+    page_title: 'Pilence — Портфолио'
+    empty: Няма проекти за избраните филтри.
+    filter:
+        aria: Филтриране по категория
+        all: Всички
+    tags:
+        logo_design: Дизайн на лого
+        brand_identity: Бранд идентичност
+        print_material: Дизайн на печатни материали
+        social_media: Дизайн за социални мрежи
+        digital_illustration: Дигитална илюстрация
+        product_design: Продуктов дизайн
     card_one:
         title: Проект едно
         text: Кратко описание на проекта и проблема, който решава.

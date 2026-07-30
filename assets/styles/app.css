@@ -1,16 +1,116 @@
+/* ---------- Self-hosted fonts (files in assets/fonts/) ---------- */
+/* Manrope — body/UI. Variable weight 200–800. */
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 200 800;
+    font-display: swap;
+    src: url("../fonts/manrope-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 200 800;
+    font-display: swap;
+    src: url("../fonts/manrope-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 200 800;
+    font-display: swap;
+    src: url("../fonts/manrope-cyrillic.woff2") format("woff2");
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* EB Garamond — display serif. Variable weight 400–800, normal + italic. */
+@font-face {
+    font-family: "EB Garamond";
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url("../fonts/ebgaramond-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: "EB Garamond";
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url("../fonts/ebgaramond-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: "EB Garamond";
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url("../fonts/ebgaramond-cyrillic.woff2") format("woff2");
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+    font-family: "EB Garamond";
+    font-style: italic;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url("../fonts/ebgaramond-latin-italic.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: "EB Garamond";
+    font-style: italic;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url("../fonts/ebgaramond-latin-ext-italic.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: "EB Garamond";
+    font-style: italic;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url("../fonts/ebgaramond-cyrillic-italic.woff2") format("woff2");
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
 :root {
-    --color-bg: #ffffff;
-    --color-bg-muted: #f5f6f8;
-    --color-text: #1f2430;
-    --color-muted: #5b6472;
-    --color-accent: #4f46e5;
-    --color-accent-hover: #4338ca;
-    --color-header: #111827;
-    --color-header-text: #e5e7eb;
-    --header-height: 64px;
+    color-scheme: dark;
+
+    /* Ground + lifted surfaces */
+    --color-bg: #140a31;
+    --color-bg-muted: #1d1240;   /* muted sections, chips */
+    --color-surface: #241652;    /* cards lifted above the ground */
+
+    /* Text */
+    --color-text: #ffffff;
+    --color-muted: #b9b2d6;      /* lavender-tinted neutral */
+
+    /* Accent + palette */
+    --color-accent: #e2450e;
+    --color-accent-hover: #c23b0c;
+    --color-blue: #87a8f4;
+    --color-purple: #6813aa;
+    --color-yellow: #f7e07f;
+
+    /* Header / footer surface */
+    --color-header: #1d1240;
+    --color-header-bg: rgba(20, 10, 49, .72);
+    --color-header-text: #ffffff;
+
+    /* Lines */
+    --color-line: rgba(255, 255, 255, .10);
+    --color-line-strong: rgba(255, 255, 255, .22);
+
+    /* Typography — Manrope for body/UI, EB Garamond as an optional display serif */
+    --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "EB Garamond", Georgia, "Times New Roman", serif;
+
+    --header-height: 80px;
     --container: 1080px;
-    --radius: 12px;
-    --shadow: 0 1px 3px rgba(17, 24, 39, .12), 0 8px 24px rgba(17, 24, 39, .06);
+    --radius: 14px;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 20px 50px rgba(0, 0, 0, .35);
 }
 
 *,
@@ -25,10 +125,17 @@ html {
 
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
     color: var(--color-text);
     background-color: var(--color-bg);
+    /* Ambient glow sits on the body's own background layer, always behind content */
+    background-image:
+        radial-gradient(60% 45% at 78% -8%, rgba(104, 19, 170, .38), transparent 60%),
+        radial-gradient(45% 35% at 8% 4%, rgba(135, 168, 244, .16), transparent 60%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -42,14 +149,25 @@ body {
     max-width: 720px;
 }
 
+/* Keyboard focus */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 2px;
+}
+
 /* ---------- Header / navigation ---------- */
 .site-header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: var(--color-header);
+    background-color: var(--color-bg);
     color: var(--color-header-text);
-    box-shadow: var(--shadow);
+    border: 1px solid var(--color-accent);
+    border-top: none;
+    border-radius: 0 0 25px 25px;
+    width: 95%;
+    margin: 0 auto;
 }
 
 .site-header__inner {
@@ -61,44 +179,51 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    padding-top: 1rem;
 }
 
 .brand {
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: .01em;
+    display: inline-flex;
+    align-items: center;
     color: #fff;
     text-decoration: none;
 }
 
-.site-nav ul {
+.brand__logo {
+    display: block;
+    width: auto;
+    height: 40px;
+}
+
+.site-header__inner .site-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: .25rem;
 }
 
 .site-nav a {
     display: block;
-    padding: .5rem .85rem;
-    border-radius: 8px;
-    color: var(--color-header-text);
+    padding: .10rem .5rem;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    color: var(--color-muted);
     text-decoration: none;
-    font-weight: 500;
-    transition: background-color .15s ease, color .15s ease;
+    font-weight: 600;
+    font-size: .9rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    transition: background-color .15s ease, color .15s ease, border-color .15s ease;
 }
 
 .site-nav a:hover,
-.site-nav a:focus-visible {
-    background-color: rgba(255, 255, 255, .1);
-    color: #fff;
-}
-
+.site-nav a:focus-visible,
 .site-nav a.is-active {
-    color: #fff;
-    background-color: var(--color-accent);
+    color: var(--color-blue);
+    background: transparent;
+    border-color: var(--color-blue);
 }
 
 /* Nav wraps the links plus the language switcher side by side on desktop */
@@ -108,35 +233,40 @@ body {
     gap: 1rem;
 }
 
+.site-nav .contacts_item {
+    color: #fff;
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+}
+.site-nav .contacts_item:hover,
+.site-nav .contacts_item:focus-visible {
+    color: var(--color-accent);
+    background-color: transparent;
+    border-color: var(--color-accent);
+}
+
 /* Language switcher */
 .lang-switch {
     display: flex;
     align-items: center;
     gap: .25rem;
     padding-left: 1rem;
-    border-left: 1px solid rgba(255, 255, 255, .18);
+    border-left: 1px solid var(--color-line-strong);
 }
 
-.lang-switch__item {
-    padding: .3rem .55rem;
-    border-radius: 8px;
-    font-size: .85rem;
-    font-weight: 600;
-    line-height: 1;
+a.lang-switch__item {
     text-decoration: none;
-    color: var(--color-header-text);
+    color: #fff;
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
     transition: background-color .15s ease, color .15s ease;
 }
 
 a.lang-switch__item:hover,
 a.lang-switch__item:focus-visible {
-    background-color: rgba(255, 255, 255, .1);
-    color: #fff;
-}
-
-.lang-switch__item.is-active {
-    color: #fff;
-    background-color: var(--color-accent);
+    color: var(--color-accent);
+    background-color: transparent;
+    border-color: var(--color-accent);
 }
 
 /* Hamburger button (hidden on desktop) */
@@ -181,9 +311,11 @@ a.lang-switch__item:focus-visible {
 
 .hero__title {
     margin: 0 0 1rem;
-    font-size: clamp(2rem, 5vw, 3.25rem);
-    line-height: 1.1;
-    letter-spacing: -.02em;
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: normal;
 }
 
 .hero__lead {
@@ -230,7 +362,7 @@ a.lang-switch__item:focus-visible {
 
 .btn--ghost:hover {
     background-color: var(--color-text);
-    color: #fff;
+    color: var(--color-bg);
 }
 
 /* ---------- Sections ---------- */
@@ -245,8 +377,15 @@ a.lang-switch__item:focus-visible {
 
 .section__title {
     margin: 0 0 .5rem;
-    font-size: clamp(1.6rem, 3.5vw, 2.25rem);
-    letter-spacing: -.01em;
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.8vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: normal;
+}
+
+/* Utility: opt any heading or highlight into the display serif */
+.font-display {
+    font-family: var(--font-display);
 }
 
 .section__lead {
@@ -270,8 +409,8 @@ a.lang-switch__item:focus-visible {
 
 .card {
     padding: 1.5rem;
-    background-color: var(--color-bg);
-    border: 1px solid rgba(17, 24, 39, .08);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-line);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
 }
@@ -291,6 +430,7 @@ a.lang-switch__item:focus-visible {
     padding: 2rem 0;
     background-color: var(--color-header);
     color: var(--color-header-text);
+    border-top: 1px solid var(--color-line);
     text-align: center;
 }
 
@@ -321,7 +461,7 @@ a.lang-switch__item:focus-visible {
     .lang-switch {
         padding: .5rem 1rem 1rem;
         border-left: 0;
-        border-top: 1px solid rgba(255, 255, 255, .18);
+        border-top: 1px solid var(--color-line-strong);
     }
 
     .site-header.is-open .site-nav {
@@ -338,4 +478,127 @@ a.lang-switch__item:focus-visible {
     .site-nav a {
         padding: .75rem 1rem;
     }
+}
+
+/* ---------- Portfolio page ---------- */
+.portfolio-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.filter-btn {
+    appearance: none;
+    cursor: pointer;
+    border: 1px solid var(--color-line-strong);
+    background-color: transparent;
+    color: var(--color-text);
+    padding: .5rem 1rem;
+    border-radius: 999px;
+    font: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+    line-height: 1;
+    transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+
+.filter-btn:hover,
+.filter-btn:focus-visible {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.filter-btn.is-active {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.portfolio-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg-muted);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform .2s ease, border-color .2s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-line-strong);
+}
+
+.portfolio-card.is-hidden {
+    display: none;
+}
+
+.portfolio-card__media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    background: linear-gradient(135deg, var(--color-purple), var(--color-blue));
+}
+
+/* Soft sheen over the placeholder gradients */
+.portfolio-card__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 90% at 20% 12%, rgba(255, 255, 255, .28), transparent 55%);
+    mix-blend-mode: screen;
+}
+
+/* Placeholder gradients — stand in for real project images */
+.portfolio-card__media--1 { background: linear-gradient(135deg, #6813aa, #e2450e); }
+.portfolio-card__media--2 { background: linear-gradient(135deg, #87a8f4, #6813aa); }
+.portfolio-card__media--3 { background: linear-gradient(135deg, #e2450e, #f7e07f); }
+.portfolio-card__media--4 { background: linear-gradient(135deg, #6813aa, #87a8f4); }
+.portfolio-card__media--5 { background: linear-gradient(135deg, #87a8f4, #e2450e); }
+.portfolio-card__media--6 { background: linear-gradient(135deg, #f7e07f, #e2450e); }
+
+.portfolio-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    padding: 1.1rem 1.15rem 1.25rem;
+}
+
+.portfolio-card__title {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.portfolio-card__tags {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+}
+
+.tag-chip {
+    font-size: .75rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: .35rem .55rem;
+    border-radius: 6px;
+    background-color: rgba(135, 168, 244, .12);
+    color: var(--color-blue);
+}
+
+.portfolio-empty {
+    margin-top: 1.5rem;
+    color: var(--color-muted);
+    font-size: 1rem;
 }

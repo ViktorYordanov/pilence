@@ -3,32 +3,7 @@
 {% block title %}{{ 'home.page_title'|trans }}{% endblock %}
 
 {% block body %}
-    <header class="site-header" data-controller="nav">
-        <div class="site-header__inner">
-            <a href="{{ path('app_home') }}" class="brand">Pilence</a>
-
-            <button
-                type="button"
-                class="nav-toggle"
-                data-action="nav#toggle"
-                data-nav-target="button"
-                aria-label="{{ 'nav.home'|trans }}"
-                aria-expanded="false"
-            >
-                <span></span><span></span><span></span>
-            </button>
-
-            <nav class="site-nav" data-nav-target="menu" aria-label="Primary">
-                <ul>
-                    <li><a href="{{ path('app_home') }}" class="is-active">{{ 'nav.home'|trans }}</a></li>
-                    <li><a href="#projects">{{ 'nav.projects'|trans }}</a></li>
-                    <li><a href="#services">{{ 'nav.services'|trans }}</a></li>
-                    <li><a href="#about">{{ 'nav.about'|trans }}</a></li>
-                </ul>
-                {{ include('_partials/_language_switcher.html.twig') }}
-            </nav>
-        </div>
-    </header>
+    {{ include('_partials/_header.html.twig', {active: 'home'}) }}
 
     <main>
         <section id="home" class="hero">
@@ -39,37 +14,37 @@
                     {{ 'hero.lead'|trans }}
                 </p>
                 <div class="hero__actions">
-                    <a href="#projects" class="btn btn--primary">{{ 'hero.view_projects'|trans }}</a>
+                    <a href="#portfolio" class="btn btn--primary">{{ 'hero.view_portfolio'|trans }}</a>
                     <a href="#about" class="btn btn--ghost">{{ 'hero.about_me'|trans }}</a>
                 </div>
 
                 <div class="hero__art" data-controller="svg-animation" aria-hidden="true">
                     <svg viewBox="0 0 240 160" width="240" height="160" role="img">
-                        <rect data-svg-animation-target="shape" x="20" y="60" width="60" height="80" rx="8" fill="#4f46e5" />
-                        <rect data-svg-animation-target="shape" x="90" y="30" width="60" height="110" rx="8" fill="#7c3aed" />
-                        <rect data-svg-animation-target="shape" x="160" y="80" width="60" height="60" rx="8" fill="#ec4899" />
-                        <circle data-svg-animation-target="shape" cx="50" cy="30" r="14" fill="#22d3ee" />
+                        <rect data-svg-animation-target="shape" x="20" y="60" width="60" height="80" rx="8" fill="#6813aa" />
+                        <rect data-svg-animation-target="shape" x="90" y="30" width="60" height="110" rx="8" fill="#e2450e" />
+                        <rect data-svg-animation-target="shape" x="160" y="80" width="60" height="60" rx="8" fill="#87a8f4" />
+                        <circle data-svg-animation-target="shape" cx="50" cy="30" r="14" fill="#f7e07f" />
                     </svg>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="section">
+        <section id="portfolio" class="section">
             <div class="container">
-                <h2 class="section__title">{{ 'projects.title'|trans }}</h2>
-                <p class="section__lead">{{ 'projects.lead'|trans }}</p>
+                <h2 class="section__title">{{ 'portfolio.title'|trans }}</h2>
+                <p class="section__lead">{{ 'portfolio.lead'|trans }}</p>
                 <div class="card-grid">
                     <article class="card">
-                        <h3 class="card__title">{{ 'projects.card_one.title'|trans }}</h3>
-                        <p class="card__text">{{ 'projects.card_one.text'|trans }}</p>
+                        <h3 class="card__title">{{ 'portfolio.card_one.title'|trans }}</h3>
+                        <p class="card__text">{{ 'portfolio.card_one.text'|trans }}</p>
                     </article>
                     <article class="card">
-                        <h3 class="card__title">{{ 'projects.card_two.title'|trans }}</h3>
-                        <p class="card__text">{{ 'projects.card_two.text'|trans }}</p>
+                        <h3 class="card__title">{{ 'portfolio.card_two.title'|trans }}</h3>
+                        <p class="card__text">{{ 'portfolio.card_two.text'|trans }}</p>
                     </article>
                     <article class="card">
-                        <h3 class="card__title">{{ 'projects.card_three.title'|trans }}</h3>
-                        <p class="card__text">{{ 'projects.card_three.text'|trans }}</p>
+                        <h3 class="card__title">{{ 'portfolio.card_three.title'|trans }}</h3>
+                        <p class="card__text">{{ 'portfolio.card_three.text'|trans }}</p>
                     </article>
                 </div>
             </div>
@@ -106,9 +81,5 @@
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>{{ 'footer.copyright'|trans({'%year%': 'now'|date('Y')}) }}</p>
-        </div>
-    </footer>
+    {{ include('_partials/_footer.html.twig') }}
 {% endblock %}

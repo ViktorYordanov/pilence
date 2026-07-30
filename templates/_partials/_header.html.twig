@@ -1,0 +1,31 @@
+{# Site header, shared across pages. Pass `active` ('home' | 'projects') to highlight the current nav item. #}
+{% set active = active|default('home') %}
+<header class="site-header" data-controller="nav">
+    <div class="site-header__inner">
+        <a href="{{ path('app_home') }}" class="brand" aria-label="Pilence">
+            <img src="{{ asset('images/logo.svg') }}" alt="Pilence" class="brand__logo" width="100" height="50">
+        </a>
+
+        <button
+            type="button"
+            class="nav-toggle"
+            data-action="nav#toggle"
+            data-nav-target="button"
+            aria-label="{{ 'nav.toggle'|trans }}"
+            aria-expanded="false"
+        >
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-nav" data-nav-target="menu" aria-label="Primary">
+            <ul>
+                <li><a href="{{ path('app_home') }}" class="{{ active == 'home' ? 'is-active' : '' }}">{{ 'nav.home'|trans }}</a></li>
+                <li><a href="{{ path('app_home') }}#services">{{ 'nav.services'|trans }}</a></li>
+                <li><a href="{{ path('app_portfolio') }}" class="{{ active == 'portfolio' ? 'is-active' : '' }}">{{ 'nav.portfolio'|trans }}</a></li>
+                <li><a href="{{ path('app_home') }}#about">{{ 'nav.about'|trans }}</a></li>
+                <li><a href="{{ path('app_home') }}#contacts" class="contacts_item">{{ 'nav.contacts'|trans }}</a></li>
+            </ul>
+            {{ include('_partials/_language_switcher.html.twig') }}
+        </nav>
+    </div>
+</header>

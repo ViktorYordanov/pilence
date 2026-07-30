@@ -26,7 +26,17 @@ breakdown of the pages:
 
 - services:
     - each service will have it's own page
-    - content to be discussed
+
+    - TITLE
+    - SHORT DESCRIPTION - 5-10 words
+    - image of a cake on the right side
+    - longer description
+    - list of benefits
+    - packages (оферти) - 3 оферти
+        - title of the offer/package
+        - image of a bite of the cake
+        - list of details like deadline, number of corrections, number of end files etc.
+        - price
 
 - about me:
     - a biography page with background/origin story, interests, hobbies, etc.
@@ -66,3 +76,11 @@ font family:
   font-weight: <weight>;
   font-style: normal;
 }
+
+colors:
+#140a31 - фон
+#ffffff - текст
+#e2450e - акценти / бутони
+#6813aa
+#87a8f4
+#f7e07f

@@ -3,9 +3,11 @@
 
 nav:
     home: Home
-    projects: Projects
     services: Services
+    portfolio: Portfolio
     about: About me
+    contacts: Contacts
+    toggle: Menu
 
 language:
     label: Language
@@ -17,12 +19,24 @@ hero:
     eyebrow: Welcome
     title: Building thoughtful software.
     lead: A home for my projects, services, and the work I care about.
-    view_projects: View projects
+    view_portfolio: View portfolio
     about_me: About me
 
-projects:
-    title: Projects
+portfolio:
+    title: Portfolio
     lead: A selection of things I've built.
+    page_title: 'Pilence — Portfolio'
+    empty: No projects match the selected filters.
+    filter:
+        aria: Filter by category
+        all: All
+    tags:
+        logo_design: Logo design
+        brand_identity: Brand identity
+        print_material: Print material design
+        social_media: Social media design
+        digital_illustration: Digital illustration
+        product_design: Product design
     card_one:
         title: Project one
         text: Short description of the project and the problem it solves.

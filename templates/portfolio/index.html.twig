@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'portfolio.page_title'|trans }}{% endblock %}
+
+{% block body %}
+    {{ include('_partials/_header.html.twig', {active: 'portfolio'}) }}
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1 class="section__title">{{ 'portfolio.title'|trans }}</h1>
+                <p class="section__lead">{{ 'portfolio.lead'|trans }}</p>
+
+                <div data-controller="portfolio-filter">
+                    {# Filter bar: "All" first, then one button per tag #}
+                    <div class="portfolio-filter" role="group" aria-label="{{ 'portfolio.filter.aria'|trans }}">
+                        <button
+                            type="button"
+                            class="filter-btn is-active"
+                            data-portfolio-filter-target="button"
+                            data-tag="all"
+                            data-action="portfolio-filter#toggle"
+                            aria-pressed="true"
+                        >{{ 'portfolio.filter.all'|trans }}</button>
+                        {% for tag in tags %}
+                            <button
+                                type="button"
+                                class="filter-btn"
+                                data-portfolio-filter-target="button"
+                                data-tag="{{ tag }}"
+                                data-action="portfolio-filter#toggle"
+                                aria-pressed="false"
+                            >{{ ('portfolio.tags.' ~ tag)|trans }}</button>
+                        {% endfor %}
+                    </div>
+
+                    <div class="portfolio-grid" data-portfolio-filter-target="grid">
+                        {% for project in projects %}
+                            <article
+                                class="portfolio-card"
+                                data-portfolio-filter-target="card"
+                                data-tags="{{ project.tags|join(' ') }}"
+                            >
+                                <div class="portfolio-card__media portfolio-card__media--{{ project.media }}" aria-hidden="true"></div>
+                                <div class="portfolio-card__body">
+                                    <h2 class="portfolio-card__title">{{ attribute(project, 'title_' ~ app.request.locale)|default(project.title_bg) }}</h2>
+                                    <ul class="portfolio-card__tags">
+                                        {% for tag in project.tags %}
+                                            <li class="tag-chip">{{ ('portfolio.tags.' ~ tag)|trans }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </article>
+                        {% endfor %}
+                    </div>
+
+                    <p class="portfolio-empty" data-portfolio-filter-target="empty" hidden>{{ 'portfolio.empty'|trans }}</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {{ include('_partials/_footer.html.twig') }}
+{% endblock %}
