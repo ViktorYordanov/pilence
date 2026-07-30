@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Pilence — Home{% endblock %}
+{% block title %}{{ 'home.page_title'|trans }}{% endblock %}
 
 {% block body %}
     <header class="site-header" data-controller="nav">
@@ -12,7 +12,7 @@
                 class="nav-toggle"
                 data-action="nav#toggle"
                 data-nav-target="button"
-                aria-label="Toggle navigation menu"
+                aria-label="{{ 'nav.home'|trans }}"
                 aria-expanded="false"
             >
                 <span></span><span></span><span></span>
@@ -20,11 +20,12 @@
 
             <nav class="site-nav" data-nav-target="menu" aria-label="Primary">
                 <ul>
-                    <li><a href="{{ path('app_home') }}" class="is-active">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About me</a></li>
+                    <li><a href="{{ path('app_home') }}" class="is-active">{{ 'nav.home'|trans }}</a></li>
+                    <li><a href="#projects">{{ 'nav.projects'|trans }}</a></li>
+                    <li><a href="#services">{{ 'nav.services'|trans }}</a></li>
+                    <li><a href="#about">{{ 'nav.about'|trans }}</a></li>
                 </ul>
+                {{ include('_partials/_language_switcher.html.twig') }}
             </nav>
         </div>
     </header>
@@ -32,14 +33,14 @@
     <main>
         <section id="home" class="hero">
             <div class="container">
-                <p class="hero__eyebrow">Welcome</p>
-                <h1 class="hero__title">Building thoughtful software.</h1>
+                <p class="hero__eyebrow">{{ 'hero.eyebrow'|trans }}</p>
+                <h1 class="hero__title">{{ 'hero.title'|trans }}</h1>
                 <p class="hero__lead">
-                    A home for my projects, services, and the work I care about.
+                    {{ 'hero.lead'|trans }}
                 </p>
                 <div class="hero__actions">
-                    <a href="#projects" class="btn btn--primary">View projects</a>
-                    <a href="#about" class="btn btn--ghost">About me</a>
+                    <a href="#projects" class="btn btn--primary">{{ 'hero.view_projects'|trans }}</a>
+                    <a href="#about" class="btn btn--ghost">{{ 'hero.about_me'|trans }}</a>
                 </div>
 
                 <div class="hero__art" data-controller="svg-animation" aria-hidden="true">
@@ -55,20 +56,20 @@
 
         <section id="projects" class="section">
             <div class="container">
-                <h2 class="section__title">Projects</h2>
-                <p class="section__lead">A selection of things I've built.</p>
+                <h2 class="section__title">{{ 'projects.title'|trans }}</h2>
+                <p class="section__lead">{{ 'projects.lead'|trans }}</p>
                 <div class="card-grid">
                     <article class="card">
-                        <h3 class="card__title">Project one</h3>
-                        <p class="card__text">Short description of the project and the problem it solves.</p>
+                        <h3 class="card__title">{{ 'projects.card_one.title'|trans }}</h3>
+                        <p class="card__text">{{ 'projects.card_one.text'|trans }}</p>
                     </article>
                     <article class="card">
-                        <h3 class="card__title">Project two</h3>
-                        <p class="card__text">Short description of the project and the problem it solves.</p>
+                        <h3 class="card__title">{{ 'projects.card_two.title'|trans }}</h3>
+                        <p class="card__text">{{ 'projects.card_two.text'|trans }}</p>
                     </article>
                     <article class="card">
-                        <h3 class="card__title">Project three</h3>
-                        <p class="card__text">Short description of the project and the problem it solves.</p>
+                        <h3 class="card__title">{{ 'projects.card_three.title'|trans }}</h3>
+                        <p class="card__text">{{ 'projects.card_three.text'|trans }}</p>
                     </article>
                 </div>
             </div>
@@ -76,20 +77,20 @@
 
         <section id="services" class="section section--muted">
             <div class="container">
-                <h2 class="section__title">Services</h2>
-                <p class="section__lead">How I can help.</p>
+                <h2 class="section__title">{{ 'services.title'|trans }}</h2>
+                <p class="section__lead">{{ 'services.lead'|trans }}</p>
                 <div class="card-grid">
                     <article class="card">
-                        <h3 class="card__title">Web development</h3>
-                        <p class="card__text">Modern, maintainable web applications built to last.</p>
+                        <h3 class="card__title">{{ 'services.web.title'|trans }}</h3>
+                        <p class="card__text">{{ 'services.web.text'|trans }}</p>
                     </article>
                     <article class="card">
-                        <h3 class="card__title">Consulting</h3>
-                        <p class="card__text">Architecture reviews and technical guidance for your team.</p>
+                        <h3 class="card__title">{{ 'services.consulting.title'|trans }}</h3>
+                        <p class="card__text">{{ 'services.consulting.text'|trans }}</p>
                     </article>
                     <article class="card">
-                        <h3 class="card__title">Maintenance</h3>
-                        <p class="card__text">Keeping existing applications healthy, secure, and up to date.</p>
+                        <h3 class="card__title">{{ 'services.maintenance.title'|trans }}</h3>
+                        <p class="card__text">{{ 'services.maintenance.text'|trans }}</p>
                     </article>
                 </div>
             </div>
@@ -97,10 +98,9 @@
 
         <section id="about" class="section">
             <div class="container container--narrow">
-                <h2 class="section__title">About me</h2>
+                <h2 class="section__title">{{ 'about.title'|trans }}</h2>
                 <p class="section__text">
-                    Write a short introduction here — who you are, what you do, and what
-                    drives your work. This section is a placeholder ready for your own words.
+                    {{ 'about.text'|trans }}
                 </p>
             </div>
         </section>
@@ -108,7 +108,7 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; {{ 'now'|date('Y') }} Pilence. All rights reserved.</p>
+            <p>{{ 'footer.copyright'|trans({'%year%': 'now'|date('Y')}) }}</p>
         </div>
     </footer>
 {% endblock %}

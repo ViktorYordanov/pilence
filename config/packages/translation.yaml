@@ -1,5 +1,10 @@
 framework:
-    default_locale: en
+    default_locale: bg
+    # Locales the app officially supports: Bulgarian (primary) + English (secondary).
+    enabled_locales: ['bg', 'en']
     translator:
         default_path: '%kernel.project_dir%/translations'
+        # Fall back to the primary language when a key is missing in the active locale.
+        fallbacks:
+            - bg
         providers:

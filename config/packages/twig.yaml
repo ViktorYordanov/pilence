@@ -1,5 +1,11 @@
 twig:
     file_name_pattern: '*.twig'
+    globals:
+        # Locales offered by the language switcher, in display order.
+        # Key = locale code (used for routing/trans), value = native label.
+        app_locales:
+            bg: Български
+            en: English
 
 when@test:
     twig:

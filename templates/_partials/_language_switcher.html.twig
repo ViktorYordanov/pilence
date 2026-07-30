@@ -1,0 +1,10 @@
+{# Language switcher — lists every supported locale, highlighting the active one. #}
+<div class="lang-switch" aria-label="{{ 'language.label'|trans }}">
+    {% for code, label in app_locales %}
+        {% if code == app.request.locale %}
+            <span class="lang-switch__item is-active" lang="{{ code }}" aria-current="true">{{ label }}</span>
+        {% else %}
+            <a class="lang-switch__item" lang="{{ code }}" href="{{ path('app_locale_switch', {_locale: code}) }}">{{ label }}</a>
+        {% endif %}
+    {% endfor %}
+</div>

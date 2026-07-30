@@ -11,6 +11,9 @@ services:
     _defaults:
         autowire: true      # Automatically injects dependencies into services
         autoconfigure: true # Automatically registers services as commands, event subscribers, etc.
+        bind:
+            # Keeps LocaleSubscriber's fallback in sync with framework.default_locale (bg).
+            $defaultLocale: '%kernel.default_locale%'
 #        bind:
 #            $ftpServer: '%env(FTP_SERVER)%'       # Bind the FTP server environment variable
 #            $ftpUsername: '%env(FTP_USERNAME)%'  # Bind the FTP username environment variable

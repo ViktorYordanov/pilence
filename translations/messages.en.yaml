@@ -1,0 +1,79 @@
+# English (secondary language) — pilence
+# Keep keys in sync with messages.bg.yaml.
+
+nav:
+    home: Home
+    projects: Projects
+    services: Services
+    about: About me
+
+language:
+    label: Language
+
+home:
+    page_title: 'Pilence — Home'
+
+hero:
+    eyebrow: Welcome
+    title: Building thoughtful software.
+    lead: A home for my projects, services, and the work I care about.
+    view_projects: View projects
+    about_me: About me
+
+projects:
+    title: Projects
+    lead: A selection of things I've built.
+    card_one:
+        title: Project one
+        text: Short description of the project and the problem it solves.
+    card_two:
+        title: Project two
+        text: Short description of the project and the problem it solves.
+    card_three:
+        title: Project three
+        text: Short description of the project and the problem it solves.
+
+services:
+    title: Services
+    lead: How I can help.
+    web:
+        title: Web development
+        text: Modern, maintainable web applications built to last.
+    consulting:
+        title: Consulting
+        text: Architecture reviews and technical guidance for your team.
+    maintenance:
+        title: Maintenance
+        text: Keeping existing applications healthy, secure, and up to date.
+
+about:
+    title: About me
+    text: >-
+        Write a short introduction here — who you are, what you do, and what
+        drives your work. This section is a placeholder ready for your own words.
+
+footer:
+    copyright: '© %year% Pilence. All rights reserved.'
+
+login:
+    page_title: Log in
+    heading: Please sign in
+    email: Email
+    password: Password
+    submit: Sign in
+    logged_in_as: 'You are logged in as %user%.'
+    logout: Logout
+
+admin:
+    dashboard:
+        title: Pilence Admin
+        welcome: 'Welcome, %user%'
+        intro: This is the Pilence admin panel.
+        hint: >-
+            Content sections will appear in the left-hand menu as you create their
+            entities and CRUD controllers.
+    menu:
+        dashboard: Dashboard
+        content: Content
+        back_to_site: Back to website
+        logout: Log out

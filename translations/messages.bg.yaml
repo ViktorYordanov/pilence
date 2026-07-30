@@ -1,0 +1,79 @@
+# Bulgarian (primary language) — pilence
+# Keep keys in sync with messages.en.yaml.
+
+nav:
+    home: Начало
+    projects: Проекти
+    services: Услуги
+    about: За мен
+
+language:
+    label: Език
+
+home:
+    page_title: 'Pilence — Начало'
+
+hero:
+    eyebrow: Добре дошли
+    title: Създаваме обмислен софтуер.
+    lead: Дом за моите проекти, услуги и работата, която ме вълнува.
+    view_projects: Виж проектите
+    about_me: За мен
+
+projects:
+    title: Проекти
+    lead: Подбор от неща, които съм изградил.
+    card_one:
+        title: Проект едно
+        text: Кратко описание на проекта и проблема, който решава.
+    card_two:
+        title: Проект две
+        text: Кратко описание на проекта и проблема, който решава.
+    card_three:
+        title: Проект три
+        text: Кратко описание на проекта и проблема, който решава.
+
+services:
+    title: Услуги
+    lead: Как мога да помогна.
+    web:
+        title: Уеб разработка
+        text: Модерни и поддържаеми уеб приложения, изградени да издържат.
+    consulting:
+        title: Консултации
+        text: Прегледи на архитектурата и техническо ръководство за вашия екип.
+    maintenance:
+        title: Поддръжка
+        text: Поддържане на съществуващи приложения здрави, сигурни и актуални.
+
+about:
+    title: За мен
+    text: >-
+        Напишете кратко представяне тук — кой сте, с какво се занимавате и какво
+        движи работата ви. Тази секция е запазено място, готово за вашите думи.
+
+footer:
+    copyright: '© %year% Pilence. Всички права запазени.'
+
+login:
+    page_title: Вход
+    heading: Моля, влезте
+    email: Имейл
+    password: Парола
+    submit: Влизане
+    logged_in_as: 'Влезли сте като %user%.'
+    logout: Изход
+
+admin:
+    dashboard:
+        title: Pilence Администрация
+        welcome: 'Добре дошли, %user%'
+        intro: Това е администраторският панел на Pilence.
+        hint: >-
+            Секциите със съдържание ще се появят в лявото меню, докато създавате
+            техните ентитети и CRUD контролери.
+    menu:
+        dashboard: Табло
+        content: Съдържание
+        back_to_site: Обратно към сайта
+        logout: Изход

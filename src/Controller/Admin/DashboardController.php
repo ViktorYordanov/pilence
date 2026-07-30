@@ -29,21 +29,24 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Pilence Admin')
+            ->setTitle('admin.dashboard.title')
+            // Renders EasyAdmin's built-in language switcher in the user menu.
+            ->setLocales(['bg', 'en'])
             ->renderContentMaximized();
     }
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        // Labels are translation keys; EasyAdmin runs them through the translator.
+        yield MenuItem::linkToDashboard('admin.menu.dashboard', 'fa fa-home');
 
         // Add one entry per content type as you create its CRUD controller, e.g.:
-        // yield MenuItem::section('Content');
+        // yield MenuItem::section('admin.menu.content');
         // yield MenuItem::linkToCrud('Pages', 'fa fa-file-lines', Page::class);
         // yield MenuItem::linkToCrud('Blog posts', 'fa fa-newspaper', Post::class);
 
         yield MenuItem::section();
-        yield MenuItem::linkToUrl('Back to website', 'fa fa-arrow-left', '/');
-        yield MenuItem::linkToLogout('Log out', 'fa fa-sign-out');
+        yield MenuItem::linkToUrl('admin.menu.back_to_site', 'fa fa-arrow-left', '/');
+        yield MenuItem::linkToLogout('admin.menu.logout', 'fa fa-sign-out');
     }
 }

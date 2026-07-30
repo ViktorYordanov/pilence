@@ -1,15 +1,14 @@
 {% extends '@EasyAdmin/page/content.html.twig' %}
 
-{% block content_title %}Welcome, {{ app.user.userIdentifier }}{% endblock %}
+{% block content_title %}{{ 'admin.dashboard.welcome'|trans({'%user%': app.user.userIdentifier}) }}{% endblock %}
 
 {% block main %}
     <div class="content-panel">
         <div class="content-panel-body">
-            <p>This is the Pilence admin panel.</p>
+            <p>{{ 'admin.dashboard.intro'|trans }}</p>
             <p class="text-muted mb-0">
-                Content sections will appear in the left-hand menu as you create their
-                entities and CRUD controllers. See <code>src/Controller/Admin/DashboardController.php</code>
-                for how to register them.
+                {{ 'admin.dashboard.hint'|trans }}
+                <code>src/Controller/Admin/DashboardController.php</code>
             </p>
         </div>
     </div>
