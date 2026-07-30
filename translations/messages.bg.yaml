@@ -16,9 +16,7 @@ home:
     page_title: 'Pilence — Начало'
 
 hero:
-    eyebrow: Добре дошли
-    title: Създаваме обмислен софтуер.
-    lead: Дом за моите проекти, услуги и работата, която ме вълнува.
+    lead: Още малко текст тук някъде
     view_portfolio: Виж портфолиото
     about_me: За мен
 
@@ -31,10 +29,10 @@ portfolio:
         aria: Филтриране по категория
         all: Всички
     tags:
-        logo_design: Дизайн на лого
+        logo_design: Лого дизайн
         brand_identity: Бранд идентичност
-        print_material: Дизайн на печатни материали
-        social_media: Дизайн за социални мрежи
+        print_material: Дизайн на рекламни материали
+        social_media: Визии за социални мрежи
         digital_illustration: Дигитална илюстрация
         product_design: Продуктов дизайн
     card_one:

@@ -16,9 +16,7 @@ home:
     page_title: 'Pilence — Home'
 
 hero:
-    eyebrow: Welcome
-    title: Building thoughtful software.
-    lead: A home for my projects, services, and the work I care about.
+    lead: A little more text here and there
     view_portfolio: View portfolio
     about_me: About me
 

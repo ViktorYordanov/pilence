@@ -20,7 +20,15 @@
         <nav class="site-nav" data-nav-target="menu" aria-label="Primary">
             <ul>
                 <li><a href="{{ path('app_home') }}" class="{{ active == 'home' ? 'is-active' : '' }}">{{ 'nav.home'|trans }}</a></li>
-                <li><a href="{{ path('app_home') }}#services">{{ 'nav.services'|trans }}</a></li>
+                <li class="has-dropdown">
+                    <a href="{{ path('app_home') }}#services" aria-haspopup="true">{{ 'nav.services'|trans }}</a>
+                    {# Service categories mirror the portfolio tag vocabulary (labels: portfolio.tags.*). #}
+                    <ul class="dropdown-menu">
+                        {% for tag in ['logo_design', 'brand_identity', 'print_material', 'social_media', 'product_design', 'digital_illustration'] %}
+                            <li><a href="{{ path('app_home') }}#services">{{ ('portfolio.tags.' ~ tag)|trans }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
                 <li><a href="{{ path('app_portfolio') }}" class="{{ active == 'portfolio' ? 'is-active' : '' }}">{{ 'nav.portfolio'|trans }}</a></li>
                 <li><a href="{{ path('app_home') }}#about">{{ 'nav.about'|trans }}</a></li>
                 <li><a href="{{ path('app_home') }}#contacts" class="contacts_item">{{ 'nav.contacts'|trans }}</a></li>

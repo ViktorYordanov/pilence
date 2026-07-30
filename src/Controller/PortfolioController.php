@@ -17,8 +17,8 @@ class PortfolioController extends AbstractController
         'brand_identity',
         'print_material',
         'social_media',
-        'digital_illustration',
         'product_design',
+        'digital_illustration',
     ];
 
     #[Route('/portfolio', name: 'app_portfolio')]

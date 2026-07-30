@@ -245,6 +245,61 @@ button:focus-visible {
     border-color: var(--color-accent);
 }
 
+/* ---------- Nav dropdown (Services) ---------- */
+.site-nav .has-dropdown {
+    position: relative;
+}
+
+/* Panel pops out directly below the trigger; hidden until hover/focus */
+.site-header__inner .site-nav ul.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: .15rem;
+    min-width: 240px;
+    margin: 0;
+    padding: .45rem;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-accent);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity .15s ease, transform .15s ease, visibility .15s ease;
+}
+
+.site-nav .has-dropdown:hover > .dropdown-menu,
+.site-nav .has-dropdown:focus-within > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown items: readable normal-case list, not the uppercase pills */
+.site-nav .dropdown-menu a {
+    display: block;
+    white-space: nowrap;
+    padding: .5rem .8rem;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-size: .85rem;
+    text-transform: none;
+    letter-spacing: normal;
+    color: var(--color-muted);
+}
+
+.site-nav .dropdown-menu a:hover,
+.site-nav .dropdown-menu a:focus-visible {
+    color: var(--color-blue);
+    border-color: transparent;
+    background-color: rgba(135, 168, 244, .12);
+}
+
 /* Language switcher */
 .lang-switch {
     display: flex;
@@ -312,17 +367,19 @@ a.lang-switch__item:focus-visible {
 .hero__title {
     margin: 0 0 1rem;
     font-family: var(--font-display);
-    font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+    font-size: clamp(2rem, 5.5vw, 3rem);
     font-weight: 600;
     line-height: 1.05;
     letter-spacing: normal;
+    text-align: center;
+    color: var(--color-yellow);
 }
 
 .hero__lead {
     margin: 0 0 2rem;
-    max-width: 42ch;
     font-size: 1.15rem;
     color: var(--color-muted);
+    text-align: center;
 }
 
 .hero__actions {
@@ -477,6 +534,20 @@ a.lang-switch__item:focus-visible {
 
     .site-nav a {
         padding: .75rem 1rem;
+    }
+
+    /* On mobile the dropdown is a static, indented nested list (no hover) */
+    .site-header__inner .site-nav ul.dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        min-width: 0;
+        margin: 0;
+        padding: 0 0 .25rem 1rem;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
     }
 }
 
