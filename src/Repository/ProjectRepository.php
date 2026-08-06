@@ -24,7 +24,7 @@ class ProjectRepository extends ServiceEntityRepository
             ->leftJoin('p.images', 'pi')
             ->addSelect('pt', 't', 'pi')
             ->orderBy('p.year', 'DESC')
-            ->addOrderBy('p.created_at', 'DESC')
+            ->addOrderBy('p.createdAt', 'DESC')
             ->getQuery()
             ->getResult();
     }

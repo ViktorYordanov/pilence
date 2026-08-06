@@ -26,7 +26,7 @@ class ProjectCrudController extends AbstractCrudController
             ->setPageTitle('index', 'admin.project.list')
             ->setPageTitle('new', 'admin.project.create')
             ->setPageTitle('edit', 'admin.project.edit')
-            ->setDefaultSort(['year' => 'DESC', 'created_at' => 'DESC']);
+            ->setDefaultSort(['year' => 'DESC', 'createdAt' => 'DESC']);
     }
 
     public function configureFields(string $pageName): iterable

@@ -41,7 +41,7 @@
                                 <ul class="tag-list">
                                     {% for projectTag in project.projectTags %}
                                         <li class="tag-chip">
-                                            {{ ('portfolio.tags.' ~ projectTag.tag_slug)|trans }}
+                                            {{ ('portfolio.tags.' ~ projectTag.tagSlug)|trans }}
                                         </li>
                                     {% endfor %}
                                 </ul>
@@ -67,7 +67,7 @@
 
                     {# Right Column: Image Grid #}
                     <div class="project-gallery">
-                        {% set visibleImages = project.images|filter(img => img.is_visible) %}
+                        {% set visibleImages = project.images|filter(img => img.isVisible) %}
 
                         {% if visibleImages|length > 0 %}
                             <div class="image-grid">

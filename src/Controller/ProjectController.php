@@ -24,14 +24,8 @@ class ProjectController extends AbstractController
             throw new NotFoundHttpException('Project not found');
         }
 
-        $locale = $this->getParameter('app.locale') ?? 'bg';
-        $titleField = 'title_' . $this->getRequest()->getLocale();
-        $descriptionField = 'description_' . $this->getRequest()->getLocale();
-
         return $this->render('project/show.html.twig', [
             'project' => $project,
-            'title_field' => $titleField,
-            'description_field' => $descriptionField,
         ]);
     }
 }
