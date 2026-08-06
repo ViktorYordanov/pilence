@@ -7,12 +7,26 @@
 
     <main>
         <section id="home" class="hero">
+            <img src="{{ asset('images/moon.svg') }}" class="hero__moon">
+            <img src="{{ asset('images/dyrveta_i_hrasti.svg') }}" class="hero__scene">
+
+            <!--img src="{{ asset('images/lqvo_dyrvo.svg') }}" class="hero__left_tree"-->
+            <!--img src="{{ asset('images/dqsno_dyrvo.svg') }}" class="hero__right_tree"-->
+
             <div class="container">
-                <h1 class="hero__title">Design that doesn't whisper.<br> Worthy of kings and wizards.</h1>
+                <h1 class="hero__title">{{ 'hero.title'|trans|raw }}</h1>
                 <p class="hero__lead">
-                    {{ 'hero.lead'|trans }}
+                    {{ 'hero.lead'|trans|raw }}
                 </p>
             </div>
+
+            <!--img src="{{ asset('images/lqv_cherven.svg') }}" class="hero__left_bush_1"-->
+            <!-img src="{{ asset('images/lqv_jult.svg') }}" class="hero__left_bush_2"-->
+            <!--img src="{{ asset('images/lqv_lilav.svg') }}" class="hero__left_bush_3"-->
+
+            <!--img src="{{ asset('images/desen_cherven.svg') }}" class="hero__right_bush_1"-->
+            <!--img src="{{ asset('images/desen_jult.svg') }}" class="hero__right_bush_2"-->
+            <!--img src="{{ asset('images/desen_lilav.svg') }}" class="hero__right_bush_3"-->
         </section>
 
         <section id="portfolio" class="section">

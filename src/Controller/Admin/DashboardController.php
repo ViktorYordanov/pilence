@@ -37,13 +37,13 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        // Labels are translation keys; EasyAdmin runs them through the translator.
         yield MenuItem::linkToDashboard('admin.menu.dashboard', 'fa fa-home');
 
-        // Add one entry per content type as you create its CRUD controller, e.g.:
-        // yield MenuItem::section('admin.menu.content');
-        // yield MenuItem::linkToCrud('Pages', 'fa fa-file-lines', Page::class);
-        // yield MenuItem::linkToCrud('Blog posts', 'fa fa-newspaper', Post::class);
+        yield MenuItem::section('admin.menu.portfolio');
+        yield MenuItem::linkToCrud('admin.menu.projects', 'fa fa-briefcase', \App\Entity\Project::class);
+        yield MenuItem::linkToCrud('admin.menu.tools', 'fa fa-wrench', \App\Entity\Tool::class);
+        yield MenuItem::linkToCrud('admin.menu.project_images', 'fa fa-image', \App\Entity\ProjectImage::class);
+        yield MenuItem::linkToCrud('admin.menu.project_tags', 'fa fa-tag', \App\Entity\ProjectTag::class);
 
         yield MenuItem::section();
         yield MenuItem::linkToUrl('admin.menu.back_to_site', 'fa fa-arrow-left', '/');

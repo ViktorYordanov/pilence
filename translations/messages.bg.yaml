@@ -16,7 +16,8 @@ home:
     page_title: 'Pilence — Начало'
 
 hero:
-    lead: Още малко текст тук някъде
+    title: Дизайн, който не шепне. <br>Достоен за крале и магьосници
+    lead: Създаден за бизнеси и предприемчиви хора,<br>които искат да бъдат запомнени, вместо само забелязани
     view_portfolio: Виж портфолиото
     about_me: За мен
 
@@ -44,6 +45,13 @@ portfolio:
     card_three:
         title: Проект три
         text: Кратко описание на проекта и проблема, който решава.
+
+project:
+    back_to_portfolio: Назад към Портфолиото
+    year: Година
+    tags: Етикети
+    tools: Използвани инструменти
+    no_images: Няма налични изображения за този проект.
 
 services:
     title: Услуги
@@ -86,6 +94,69 @@ admin:
             техните ентитети и CRUD контролери.
     menu:
         dashboard: Табло
-        content: Съдържание
+        portfolio: Портфолио
+        projects: Проекти
+        tools: Инструменти
+        project_images: Изображения на проекти
+        project_tags: Етикети на проекти
         back_to_site: Обратно към сайта
         logout: Изход
+    common:
+        created_at: Създано
+        updated_at: Актуализирано
+    project:
+        singular: Проект
+        plural: Проекти
+        list: Проекти
+        create: Създай проект
+        edit: Редактирай проект
+        title_bg: Заглавие (Български)
+        title_bg_help: Заглавие на проекта на български
+        title_en: Заглавие (Английски)
+        title_en_help: Заглавие на проекта на английски
+        description_bg: Описание (Български)
+        description_en: Описание (Английски)
+        description_help: Може да съдържа HTML тагове
+        year: Година
+        cover_image: Корица
+        cover_image_help: Път или URL на изображението за портфолиото
+        tags: Етикети
+        tags_help: Избери съответстващи етикети на проекта
+        tools: Използвани инструменти
+        tools_help: Избери инструменти и програми, използвани в проекта
+        images: Галерия
+        images_help: Изображения от галерията на проекта
+    tool:
+        singular: Инструмент
+        plural: Инструменти
+        list: Инструменти
+        create: Създай инструмент
+        edit: Редактирай инструмент
+        name_bg: Име (Български)
+        name_en: Име (Английски)
+        name_help: Име на инструмент или програма (напр. Adobe Photoshop, Figma)
+        icon: Икона
+        icon_help: Класа на иконата или път (опционално)
+        projects: Проекти
+    project_image:
+        singular: Изображение на проект
+        plural: Изображения на проекти
+        list: Изображения на проекти
+        create: Създай изображение
+        edit: Редактирай изображение
+        project: Проект
+        image_path: Път до изображението
+        image_path_help: Път или URL на изображението
+        title_bg: Заглавие (Български)
+        title_en: Заглавие (Английски)
+        position: Позиция
+        position_help: Ред в галерията (по-малки числа първи)
+        is_visible: Видимо
+    project_tag:
+        singular: Етикет на проект
+        plural: Етикети на проекти
+        list: Етикети на проекти
+        create: Създай етикет
+        edit: Редактирай етикет
+        project: Проект
+        tag_slug: Етикет

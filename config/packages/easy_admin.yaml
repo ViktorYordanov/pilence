@@ -1,0 +1,6 @@
+easy_admin:
+    sites:
+        admin:
+            forms:
+                user_password:
+                    class: 'Symfony\Component\Form\Extension\Core\Type\PasswordType'

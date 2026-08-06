@@ -16,7 +16,8 @@ home:
     page_title: 'Pilence — Home'
 
 hero:
-    lead: A little more text here and there
+    title: Design that doesn't whisper. <br>Worthy of kings and wizards
+    lead: Designed for businesses and enterprising people,<br>who want to be remembered instead of just noticed
     view_portfolio: View portfolio
     about_me: About me
 
@@ -44,6 +45,13 @@ portfolio:
     card_three:
         title: Project three
         text: Short description of the project and the problem it solves.
+
+project:
+    back_to_portfolio: Back to Portfolio
+    year: Year
+    tags: Tags
+    tools: Tools Used
+    no_images: No images available for this project.
 
 services:
     title: Services
@@ -86,6 +94,69 @@ admin:
             entities and CRUD controllers.
     menu:
         dashboard: Dashboard
-        content: Content
+        portfolio: Portfolio
+        projects: Projects
+        tools: Tools
+        project_images: Project Images
+        project_tags: Project Tags
         back_to_site: Back to website
         logout: Log out
+    common:
+        created_at: Created at
+        updated_at: Updated at
+    project:
+        singular: Project
+        plural: Projects
+        list: Projects
+        create: Create Project
+        edit: Edit Project
+        title_bg: Title (Bulgarian)
+        title_bg_help: Project title in Bulgarian
+        title_en: Title (English)
+        title_en_help: Project title in English
+        description_bg: Description (Bulgarian)
+        description_en: Description (English)
+        description_help: Can contain HTML tags
+        year: Year
+        cover_image: Cover Image
+        cover_image_help: Image path/URL for portfolio listing
+        tags: Tags
+        tags_help: Select relevant project tags
+        tools: Tools Used
+        tools_help: Select tools and programs used in this project
+        images: Gallery Images
+        images_help: Project gallery images
+    tool:
+        singular: Tool
+        plural: Tools
+        list: Tools
+        create: Create Tool
+        edit: Edit Tool
+        name_bg: Name (Bulgarian)
+        name_en: Name (English)
+        name_help: Tool or program name (e.g., Adobe Photoshop, Figma)
+        icon: Icon
+        icon_help: Icon class or path (optional)
+        projects: Projects
+    project_image:
+        singular: Project Image
+        plural: Project Images
+        list: Project Images
+        create: Create Project Image
+        edit: Edit Project Image
+        project: Project
+        image_path: Image Path
+        image_path_help: Path or URL to the image
+        title_bg: Title (Bulgarian)
+        title_en: Title (English)
+        position: Position
+        position_help: Order in gallery (lower numbers first)
+        is_visible: Visible
+    project_tag:
+        singular: Project Tag
+        plural: Project Tags
+        list: Project Tags
+        create: Create Project Tag
+        edit: Edit Project Tag
+        project: Project
+        tag_slug: Tag

@@ -21,12 +21,15 @@
             <ul>
                 <li><a href="{{ path('app_home') }}" class="{{ active == 'home' ? 'is-active' : '' }}">{{ 'nav.home'|trans }}</a></li>
                 <li class="has-dropdown">
-                    <a href="{{ path('app_home') }}#services" aria-haspopup="true">{{ 'nav.services'|trans }}</a>
+                    <a href="{{ path('app_service', {slug: 'logo-design'}) }}" aria-haspopup="true">{{ 'nav.services'|trans }}</a>
                     {# Service categories mirror the portfolio tag vocabulary (labels: portfolio.tags.*). #}
                     <ul class="dropdown-menu">
-                        {% for tag in ['logo_design', 'brand_identity', 'print_material', 'social_media', 'product_design', 'digital_illustration'] %}
-                            <li><a href="{{ path('app_home') }}#services">{{ ('portfolio.tags.' ~ tag)|trans }}</a></li>
-                        {% endfor %}
+                        <li><a href="{{ path('app_service', {slug: 'logo-design'}) }}">{{ ('portfolio.tags.logo_design')|trans }}</a></li>
+                        <li><a href="{{ path('app_service', {slug: 'brand-identity'}) }}">{{ ('portfolio.tags.brand_identity')|trans }}</a></li>
+                        <li><a href="{{ path('app_service', {slug: 'print-material'}) }}">{{ ('portfolio.tags.print_material')|trans }}</a></li>
+                        <li><a href="{{ path('app_service', {slug: 'social-media'}) }}">{{ ('portfolio.tags.social_media')|trans }}</a></li>
+                        <li><a href="{{ path('app_service', {slug: 'product-design'}) }}">{{ ('portfolio.tags.product_design')|trans }}</a></li>
+                        <li><a href="{{ path('app_service', {slug: 'digital-illustration'}) }}">{{ ('portfolio.tags.digital_illustration')|trans }}</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ path('app_portfolio') }}" class="{{ active == 'portfolio' ? 'is-active' : '' }}">{{ 'nav.portfolio'|trans }}</a></li>

@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% set locale = app.request.locale %}
+{% set titleField = 'title' ~ locale|capitalize %}
+{% set descriptionField = 'description' ~ locale|capitalize %}
+{% set title = attribute(project, titleField) %}
+{% set description = attribute(project, descriptionField) %}
+
+{% block title %}{{ title }} — Pilence{% endblock %}
+
+{% block body %}
+    {{ include('_partials/_header.html.twig') }}
+
+    <main>
+        <section class="section">
+            <div class="container container--project">
+                <a href="{{ path('app_portfolio') }}" class="project__back-link">
+                    <span class="project__back-icon">←</span>
+                    {{ 'project.back_to_portfolio'|trans }}
+                </a>
+
+                <div class="project-layout">
+                    {# Left Column: Project Info #}
+                    <aside class="project-info">
+                        <h1 class="project-info__title">{{ title }}</h1>
+
+                        <div class="project-info__meta">
+                            <div class="project-info__year">
+                                <span class="project-info__label">{{ 'project.year'|trans }}</span>
+                                <span class="project-info__value">{{ project.year }}</span>
+                            </div>
+                        </div>
+
+                        <div class="project-info__description">
+                            {{ description|raw }}
+                        </div>
+
+                        {% if project.projectTags|length > 0 %}
+                            <div class="project-info__tags">
+                                <h2 class="project-info__label">{{ 'project.tags'|trans }}</h2>
+                                <ul class="tag-list">
+                                    {% for projectTag in project.projectTags %}
+                                        <li class="tag-chip">
+                                            {{ ('portfolio.tags.' ~ projectTag.tag_slug)|trans }}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+
+                        {% if project.tools|length > 0 %}
+                            <div class="project-info__tools">
+                                <h2 class="project-info__label">{{ 'project.tools'|trans }}</h2>
+                                <ul class="tools-list">
+                                    {% for tool in project.tools %}
+                                        <li class="tool-item">
+                                            {% if tool.icon %}
+                                                <span class="tool-item__icon" aria-hidden="true">{{ tool.icon }}</span>
+                                            {% endif %}
+                                            <span class="tool-item__name">{{ attribute(tool, 'name' ~ locale|capitalize) }}</span>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </aside>
+
+                    {# Right Column: Image Grid #}
+                    <div class="project-gallery">
+                        {% set visibleImages = project.images|filter(img => img.is_visible) %}
+
+                        {% if visibleImages|length > 0 %}
+                            <div class="image-grid">
+                                {% for image in visibleImages %}
+                                    {% set titleFieldImage = 'title' ~ locale|capitalize %}
+                                    {% set imageTitle = attribute(image, titleFieldImage) %}
+                                    <figure class="image-grid__item">
+                                        <img
+                                            src="{{ image.imagePath }}"
+                                            alt="{{ imageTitle ?: 'Project image' }}"
+                                            class="image-grid__img"
+                                            loading="lazy"
+                                        >
+                                        {% if imageTitle %}
+                                            <figcaption class="image-grid__caption">{{ imageTitle }}</figcaption>
+                                        {% endif %}
+                                    </figure>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <div class="project-gallery__empty">
+                                {{ 'project.no_images'|trans }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {{ include('_partials/_footer.html.twig') }}
+{% endblock %}

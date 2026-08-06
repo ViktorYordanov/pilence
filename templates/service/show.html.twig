@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% if app.request.locale == 'bg' %}
+        {{ service.title_bg }} - Услуга
+    {% else %}
+        {{ service.title_en }} - Service
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    {{ include('_partials/_header.html.twig', {active: 'services'}) }}
+
+    <main>
+        {# Hero section with title and subtitle on the left, image on the right #}
+        <section class="service-hero">
+            <div class="container">
+                <div class="service-hero__wrapper">
+                    <div class="service-hero__content">
+                        <h1 class="service-hero__title">
+                            {% if app.request.locale == 'bg' %}
+                                {{ service.title_bg }}
+                            {% else %}
+                                {{ service.title_en }}
+                            {% endif %}
+                        </h1>
+                        <p class="service-hero__subtitle">{{ service.subtitle }}</p>
+                    </div>
+                    <div class="service-hero__image" aria-hidden="true">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {# Long description section with alternated background #}
+        <section class="section">
+            <div class="container">
+                <div class="description-box">
+                    <p class="description-box__text">
+                        {% if app.request.locale == 'bg' %}
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+                        {% else %}
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        {# Benefits section #}
+        <section class="section section--muted">
+            <div class="container">
+                <h2 class="section__title">{{ app.request.locale == 'bg' ? 'Предимства' : 'Benefits' }}</h2>
+                <div class="benefits-grid benefits-grid--single-column">
+                    <article class="benefit-card">
+                        <i class="fa-solid fa-wand-sparkles"></i>
+                        <p class="benefit-card__text">
+                            <span class="benefit-card__title">{{ app.request.locale == 'bg' ? 'Професионално' : 'Professional' }}</span>
+                            {{ app.request.locale == 'bg' ? 'Висок стандарт на качество във всеки детайл' : 'High quality standards in every detail' }}
+                        </p>
+                    </article>
+                    <article class="benefit-card">
+                        <i class="fa-solid fa-wand-sparkles"></i>
+                        <p class="benefit-card__text">
+                            <span class="benefit-card__title">{{ app.request.locale == 'bg' ? 'Персонализирано' : 'Personalized' }}</span>
+                            {{ app.request.locale == 'bg' ? 'Приспособено к вашите специфични нужди' : 'Tailored to your specific needs' }}
+                        </p>
+                    </article>
+                    <article class="benefit-card">
+                        <i class="fa-solid fa-wand-sparkles"></i>
+                        <p class="benefit-card__text">
+                            <span class="benefit-card__title">{{ app.request.locale == 'bg' ? 'Бързо' : 'Fast' }}</span>
+                            {{ app.request.locale == 'bg' ? 'Ефективен процес с бързи резултати' : 'Efficient process with quick results' }}
+                        </p>
+                    </article>
+                    <article class="benefit-card">
+                        <i class="fa-solid fa-wand-sparkles"></i>
+                        <p class="benefit-card__text">
+                            <span class="benefit-card__title">{{ app.request.locale == 'bg' ? 'Поддръжка' : 'Support' }}</span>
+                            {{ app.request.locale == 'bg' ? 'Непрекъсната поддръжка след доставката' : 'Ongoing support after delivery' }}
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        {# Package deals section #}
+        <section class="section">
+            <div class="container">
+                <h2 class="section__title">{{ app.request.locale == 'bg' ? 'Пакети' : 'Packages' }}</h2>
+                <div class="packages-grid">
+                    {# Package 1 #}
+                    <article class="package-card">
+                        <h3 class="package-card__name">{{ app.request.locale == 'bg' ? 'Стартер' : 'Starter' }}</h3>
+                        <ul class="package-card__details">
+                            <li>{{ app.request.locale == 'bg' ? 'Срок на доставка' : 'Deadline' }}: 14 дни / days</li>
+                            <li>{{ app.request.locale == 'bg' ? 'Брой корекции' : 'Corrections' }}: 2</li>
+                            <li>{{ app.request.locale == 'bg' ? 'Крайни файлове' : 'End Files' }}: PNG, JPEG</li>
+                        </ul>
+                        <div class="package-card__price">$299</div>
+                    </article>
+
+                    {# Package 2 #}
+                    <article class="package-card package-card--featured">
+                        <div class="package-card__badge">{{ app.request.locale == 'bg' ? 'Популярно' : 'Popular' }}</div>
+                        <h3 class="package-card__name">{{ app.request.locale == 'bg' ? 'Професионално' : 'Professional' }}</h3>
+                        <ul class="package-card__details">
+                            <li>{{ app.request.locale == 'bg' ? 'Срок на доставка' : 'Deadline' }}: 7 дни / days</li>
+                            <li>{{ app.request.locale == 'bg' ? 'Брой корекции' : 'Corrections' }}: 5</li>
+                            <li>{{ app.request.locale == 'bg' ? 'Крайни файлове' : 'End Files' }}: PNG, JPEG, SVG, PDF</li>
+                        </ul>
+                        <div class="package-card__price">$599</div>
+                    </article>
+
+                    {# Package 3 #}
+                    <article class="package-card">
+                        <h3 class="package-card__name">{{ app.request.locale == 'bg' ? 'Премиум' : 'Premium' }}</h3>
+                        <ul class="package-card__details">
+                            <li>{{ app.request.locale == 'bg' ? 'Срок на доставка' : 'Deadline' }}: 3 дни / days</li>
+                            <li>{{ app.request.locale == 'bg' ? 'Брой корекции' : 'Corrections' }}: Неограничени / Unlimited</li>
+                            <li>{{ app.request.locale == 'bg' ? 'Крайни файлове' : 'End Files' }}: Всички формати / All formats</li>
+                        </ul>
+                        <div class="package-card__price">$999</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {{ include('_partials/_footer.html.twig') }}
+{% endblock %}
