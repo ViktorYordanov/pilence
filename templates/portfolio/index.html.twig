@@ -41,14 +41,14 @@
                                 href="{{ path('app_project', {id: project.id}) }}"
                                 class="portfolio-card"
                                 data-portfolio-filter-target="card"
-                                data-tags="{% for projectTag in project.projectTags %}{{ projectTag.tagSlug }} {% endfor %}"
+                                data-tags="{% for tag in project.tags %}{{ tag.slug }} {% endfor %}"
                             >
                                 <div class="portfolio-card__media{% if project.coverImage is not empty %}" style="background-image: url('{{ project.coverImage }}'){% endif %}" aria-hidden="true"></div>
                                 <div class="portfolio-card__body">
                                     <h2 class="portfolio-card__title">{{ attribute(project, titleField)|default(project.titleBg) }}</h2>
                                     <ul class="portfolio-card__tags">
-                                        {% for projectTag in project.projectTags %}
-                                            <li class="tag-chip">{{ ('portfolio.tags.' ~ projectTag.tagSlug)|trans }}</li>
+                                        {% for tag in project.tags %}
+                                            <li class="tag-chip">{{ ('portfolio.tags.' ~ tag.slug)|trans }}</li>
                                         {% endfor %}
                                     </ul>
                                 </div>

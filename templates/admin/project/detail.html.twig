@@ -1,0 +1,47 @@
+{% extends '@EasyAdmin/crud/detail.html.twig' %}
+
+{% block content %}
+    <div class="container-xl">
+        {{ parent() }}
+
+        {% if entity.id %}
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">Project Images</h5>
+                            <a href="{{ path('admin_projects_images', {'id': entity.id}) }}" class="btn btn-sm btn-primary">
+                                <i class="fa fa-images"></i> Manage Images
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            {% if entity.images|length > 0 %}
+                                <div class="row">
+                                    {% for image in entity.images %}
+                                        <div class="col-md-3 mb-3">
+                                            <div class="position-relative">
+                                                {% if image.imagePath %}
+                                                    <img src="/{{ image.imagePath }}" alt="{{ image.titleBg ?? image.titleEn }}" class="img-fluid rounded" style="width: 100%; height: 150px; object-fit: cover;">
+                                                    {% if not image.isVisible %}
+                                                        <span class="position-absolute top-0 start-0 badge bg-danger">Hidden</span>
+                                                    {% endif %}
+                                                {% else %}
+                                                    <div class="bg-light rounded" style="width: 100%; height: 150px; display: flex; align-items: center; justify-content: center;">
+                                                        <i class="fa fa-image fa-2x text-muted"></i>
+                                                    </div>
+                                                {% endif %}
+                                                <small class="d-block mt-1 text-muted">{{ image.titleBg ?? image.titleEn ?? 'Untitled' }}</small>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                <p class="text-muted">No images added yet. <a href="{{ path('admin_projects_images', {'id': entity.id}) }}">Add images</a></p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

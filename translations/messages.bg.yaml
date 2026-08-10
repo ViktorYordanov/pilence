@@ -54,7 +54,7 @@ project:
     no_images: Няма налични изображения за този проект.
 
 services:
-    title: Услуги
+    title: Магическа дизайн торта
     lead: Как мога да помогна.
     web:
         title: Уеб разработка
@@ -96,9 +96,8 @@ admin:
         dashboard: Табло
         portfolio: Портфолио
         projects: Проекти
+        tags: Етикети
         tools: Инструменти
-        project_images: Изображения на проекти
-        project_tags: Етикети на проекти
         back_to_site: Обратно към сайта
         logout: Изход
     common:
@@ -152,6 +151,18 @@ admin:
         position: Позиция
         position_help: Ред в галерията (по-малки числа първи)
         is_visible: Видимо
+    tag:
+        singular: Етикет
+        plural: Етикети
+        list: Етикети
+        create: Създай етикет
+        edit: Редактирай етикет
+        slug: Slug
+        slug_help: Slug на етикета (напр. logo_design) — не може да се променя след създаване
+        name_bg: Име (Български)
+        name_bg_help: Име на етикета на български
+        name_en: Име (Английски)
+        name_en_help: Име на етикета на английски
     project_tag:
         singular: Етикет на проект
         plural: Етикети на проекти
@@ -159,4 +170,4 @@ admin:
         create: Създай етикет
         edit: Редактирай етикет
         project: Проект
-        tag_slug: Етикет
+        tag: Етикет

@@ -14,6 +14,8 @@ services:
         bind:
             # Keeps LocaleSubscriber's fallback in sync with framework.default_locale (bg).
             $defaultLocale: '%kernel.default_locale%'
+            # ProjectImageFileService: path to public/assets directory
+            $projectsAssetsDir: '%kernel.project_dir%/public/assets'
 #        bind:
 #            $ftpServer: '%env(FTP_SERVER)%'       # Bind the FTP server environment variable
 #            $ftpUsername: '%env(FTP_USERNAME)%'  # Bind the FTP username environment variable

@@ -35,6 +35,9 @@ class Project
     #[ORM\Column(name: 'cover_image', length: 255, nullable: true)]
     private ?string $coverImage = null;
 
+    // Temporary property for file upload (not persisted)
+    private mixed $coverImageFile = null;
+
     #[ORM\Column(name: 'created_at')]
     private ?\DateTimeImmutable $createdAt = null;
 
@@ -42,10 +45,11 @@ class Project
     private ?\DateTimeImmutable $updatedAt = null;
 
     /**
-     * @var Collection<int, ProjectTag>
+     * @var Collection<int, Tag>
      */
-    #[ORM\OneToMany(targetEntity: ProjectTag::class, mappedBy: 'project', cascade: ['all'], orphanRemoval: true)]
-    private Collection $projectTags;
+    #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'projects')]
+    #[ORM\JoinTable(name: 'project_tag')]
+    private Collection $tags;
 
     /**
      * @var Collection<int, Tool>
@@ -63,7 +67,7 @@ class Project
 
     public function __construct()
     {
-        $this->projectTags = new ArrayCollection();
+        $this->tags = new ArrayCollection();
         $this->tools = new ArrayCollection();
         $this->images = new ArrayCollection();
         $this->createdAt = new \DateTimeImmutable();
@@ -147,6 +151,18 @@ class Project
         return $this;
     }
 
+    public function getCoverImageFile(): mixed
+    {
+        return $this->coverImageFile;
+    }
+
+    public function setCoverImageFile(mixed $coverImageFile): static
+    {
+        $this->coverImageFile = $coverImageFile;
+
+        return $this;
+    }
+
     public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->createdAt;
@@ -172,30 +188,25 @@ class Project
     }
 
     /**
-     * @return Collection<int, ProjectTag>
+     * @return Collection<int, Tag>
      */
-    public function getProjectTags(): Collection
+    public function getTags(): Collection
     {
-        return $this->projectTags;
+        return $this->tags;
     }
 
-    public function addProjectTag(ProjectTag $projectTag): static
+    public function addTag(Tag $tag): static
     {
-        if (!$this->projectTags->contains($projectTag)) {
-            $this->projectTags->add($projectTag);
-            $projectTag->setProject($this);
+        if (!$this->tags->contains($tag)) {
+            $this->tags->add($tag);
         }
 
         return $this;
     }
 
-    public function removeProjectTag(ProjectTag $projectTag): static
+    public function removeTag(Tag $tag): static
     {
-        if ($this->projectTags->removeElement($projectTag)) {
-            if ($projectTag->getProject() === $this) {
-                $projectTag->setProject(null);
-            }
-        }
+        $this->tags->removeElement($tag);
 
         return $this;
     }

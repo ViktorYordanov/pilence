@@ -33,6 +33,17 @@ class ProjectImage
     #[ORM\Column(name: 'is_visible')]
     private bool $isVisible = true;
 
+    #[ORM\Column(name: 'file_extension', length: 10, nullable: true)]
+    private ?string $fileExtension = null;
+
+    #[ORM\Column(name: 'uploaded_at')]
+    private ?\DateTimeImmutable $uploadedAt = null;
+
+    public function __construct()
+    {
+        $this->uploadedAt = new \DateTimeImmutable();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -106,6 +117,30 @@ class ProjectImage
     public function setIsVisible(bool $isVisible): static
     {
         $this->isVisible = $isVisible;
+
+        return $this;
+    }
+
+    public function getFileExtension(): ?string
+    {
+        return $this->fileExtension;
+    }
+
+    public function setFileExtension(?string $fileExtension): static
+    {
+        $this->fileExtension = $fileExtension;
+
+        return $this;
+    }
+
+    public function getUploadedAt(): ?\DateTimeImmutable
+    {
+        return $this->uploadedAt;
+    }
+
+    public function setUploadedAt(\DateTimeImmutable $uploadedAt): static
+    {
+        $this->uploadedAt = $uploadedAt;
 
         return $this;
     }

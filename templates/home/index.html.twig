@@ -29,6 +29,25 @@
             <!--img src="{{ asset('images/desen_lilav.svg') }}" class="hero__right_bush_3"-->
         </section>
 
+        <section id="services" class="section section--muted">
+            <div class="container">
+                <h2 class="section__title">{{ 'services.title'|trans }}</h2>
+                <div class="cakes-grid">
+                    <div class="cake-wrapper">
+                        <a href="{{ path('app_service', {slug: 'logo-design'}) }}">
+                            <img src="{{ asset('images/cake_logo_design.svg') }}" alt="logo design">
+                        </a>
+                    </div>
+                    <div class="cake-wrapper">
+                        <a href="{{ path('app_service', {slug: 'brand-identity'}) }}">
+                            <img src="{{ asset('images/cake_brand_identity.svg') }}" alt="brand identity">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {#
         <section id="portfolio" class="section">
             <div class="container">
                 <h2 class="section__title">{{ 'portfolio.title'|trans }}</h2>
@@ -49,27 +68,7 @@
                 </div>
             </div>
         </section>
-
-        <section id="services" class="section section--muted">
-            <div class="container">
-                <h2 class="section__title">{{ 'services.title'|trans }}</h2>
-                <p class="section__lead">{{ 'services.lead'|trans }}</p>
-                <div class="card-grid">
-                    <article class="card">
-                        <h3 class="card__title">{{ 'services.web.title'|trans }}</h3>
-                        <p class="card__text">{{ 'services.web.text'|trans }}</p>
-                    </article>
-                    <article class="card">
-                        <h3 class="card__title">{{ 'services.consulting.title'|trans }}</h3>
-                        <p class="card__text">{{ 'services.consulting.text'|trans }}</p>
-                    </article>
-                    <article class="card">
-                        <h3 class="card__title">{{ 'services.maintenance.title'|trans }}</h3>
-                        <p class="card__text">{{ 'services.maintenance.text'|trans }}</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+#}
 
         <section id="about" class="section">
             <div class="container container--narrow">

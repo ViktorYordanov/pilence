@@ -19,10 +19,10 @@ class ProjectRepository extends ServiceEntityRepository
     public function findAllWithRelations(): array
     {
         return $this->createQueryBuilder('p')
-            ->leftJoin('p.projectTags', 'pt')
+            ->leftJoin('p.tags', 'tg')
             ->leftJoin('p.tools', 't')
             ->leftJoin('p.images', 'pi')
-            ->addSelect('pt', 't', 'pi')
+            ->addSelect('tg', 't', 'pi')
             ->orderBy('p.year', 'DESC')
             ->addOrderBy('p.createdAt', 'DESC')
             ->getQuery()
@@ -32,10 +32,10 @@ class ProjectRepository extends ServiceEntityRepository
     public function findBySlug(string $slug): ?Project
     {
         return $this->createQueryBuilder('p')
-            ->leftJoin('p.projectTags', 'pt')
+            ->leftJoin('p.tags', 'tg')
             ->leftJoin('p.tools', 't')
             ->leftJoin('p.images', 'pi')
-            ->addSelect('pt', 't', 'pi')
+            ->addSelect('tg', 't', 'pi')
             ->where('p.id = :id OR LOWER(p.title_bg) LIKE LOWER(:slug) OR LOWER(p.title_en) LIKE LOWER(:slug)')
             ->setParameter('slug', '%' . str_replace('-', ' ', $slug) . '%')
             ->setParameter('id', (int)$slug ?: -1)

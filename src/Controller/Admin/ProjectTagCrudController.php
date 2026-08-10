@@ -6,19 +6,9 @@ use App\Entity\ProjectTag;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 
 class ProjectTagCrudController extends AbstractCrudController
 {
-    private const TAGS = [
-        'logo_design',
-        'brand_identity',
-        'print_material',
-        'social_media',
-        'product_design',
-        'digital_illustration',
-    ];
-
     public static function getEntityFqcn(): string
     {
         return ProjectTag::class;
@@ -39,8 +29,7 @@ class ProjectTagCrudController extends AbstractCrudController
         yield AssociationField::new('project')
             ->setLabel('admin.project_tag.project');
 
-        yield ChoiceField::new('tagSlug')
-            ->setLabel('admin.project_tag.tag_slug')
-            ->setChoices(array_combine(self::TAGS, self::TAGS));
+        yield AssociationField::new('tag')
+            ->setLabel('admin.project_tag.tag');
     }
 }

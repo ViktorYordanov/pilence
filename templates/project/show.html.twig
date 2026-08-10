@@ -22,26 +22,22 @@
                 <div class="project-layout">
                     {# Left Column: Project Info #}
                     <aside class="project-info">
-                        <h1 class="project-info__title">{{ title }}</h1>
-
-                        <div class="project-info__meta">
-                            <div class="project-info__year">
-                                <span class="project-info__label">{{ 'project.year'|trans }}</span>
-                                <span class="project-info__value">{{ project.year }}</span>
-                            </div>
+                        <div class="project-info__title-container">
+                            <h1 class="project-info__title">{{ title }}</h1>
+                            <span class="project-info__value">{{ project.year }}</span>
                         </div>
 
                         <div class="project-info__description">
                             {{ description|raw }}
                         </div>
 
-                        {% if project.projectTags|length > 0 %}
+                        {% if project.tags|length > 0 %}
                             <div class="project-info__tags">
                                 <h2 class="project-info__label">{{ 'project.tags'|trans }}</h2>
                                 <ul class="tag-list">
-                                    {% for projectTag in project.projectTags %}
+                                    {% for tag in project.tags %}
                                         <li class="tag-chip">
-                                            {{ ('portfolio.tags.' ~ projectTag.tagSlug)|trans }}
+                                            {{ ('portfolio.tags.' ~ tag.slug)|trans }}
                                         </li>
                                     {% endfor %}
                                 </ul>
@@ -55,7 +51,7 @@
                                     {% for tool in project.tools %}
                                         <li class="tool-item">
                                             {% if tool.icon %}
-                                                <span class="tool-item__icon" aria-hidden="true">{{ tool.icon }}</span>
+                                                <span class="tool-item__icon {{ tool.icon }}" aria-hidden="true"></span>
                                             {% endif %}
                                             <span class="tool-item__name">{{ attribute(tool, 'name' ~ locale|capitalize) }}</span>
                                         </li>
@@ -67,16 +63,21 @@
 
                     {# Right Column: Image Grid #}
                     <div class="project-gallery">
+
                         {% set visibleImages = project.images|filter(img => img.isVisible) %}
 
                         {% if visibleImages|length > 0 %}
-                            <div class="image-grid">
+                            <div class="image-grid pswp-gallery">
                                 {% for image in visibleImages %}
                                     {% set titleFieldImage = 'title' ~ locale|capitalize %}
                                     {% set imageTitle = attribute(image, titleFieldImage) %}
-                                    <figure class="image-grid__item">
+                                    <a href="#" class="image-grid__item"
+                                        data-pswp-src="https://localhost:8443/{{ image.imagePath }}"
+                                        data-pswp-width="385" 
+                                        data-pswp-height="360"
+                                    >
                                         <img
-                                            src="{{ image.imagePath }}"
+                                            src="/{{ image.imagePath }}"
                                             alt="{{ imageTitle ?: 'Project image' }}"
                                             class="image-grid__img"
                                             loading="lazy"
@@ -84,7 +85,7 @@
                                         {% if imageTitle %}
                                             <figcaption class="image-grid__caption">{{ imageTitle }}</figcaption>
                                         {% endif %}
-                                    </figure>
+                                    </a>
                                 {% endfor %}
                             </div>
                         {% else %}
@@ -99,4 +100,30 @@
     </main>
 
     {{ include('_partials/_footer.html.twig') }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('vendor/photoswipe/dist/photoswipe.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    
+
+    <script type="module">
+        import PhotoSwipeLightbox from '{{ asset('vendor/photoswipe/dist/photoswipe-lightbox.esm.min.js') }}';
+
+        const lightbox = new PhotoSwipeLightbox({
+        // may select multiple "galleries"
+        gallery: '.image-grid',
+
+        // Elements within gallery (slides)
+        children: '.image-grid__item',
+
+        // setup PhotoSwipe Core dynamic import
+        pswpModule: () => import('{{ asset('vendor/photoswipe/dist/photoswipe.esm.min.js') }}')
+        });
+        lightbox.init();
+    </script>
 {% endblock %}

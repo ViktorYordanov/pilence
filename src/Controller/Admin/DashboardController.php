@@ -40,10 +40,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('admin.menu.dashboard', 'fa fa-home');
 
         yield MenuItem::section('admin.menu.portfolio');
-        yield MenuItem::linkToCrud('admin.menu.projects', 'fa fa-briefcase', \App\Entity\Project::class);
+        yield MenuItem::linkToRoute('admin.menu.projects', 'fa fa-briefcase', 'admin_projects_dashboard');
+        yield MenuItem::linkToCrud('admin.menu.tags', 'fa fa-tag', \App\Entity\Tag::class);
         yield MenuItem::linkToCrud('admin.menu.tools', 'fa fa-wrench', \App\Entity\Tool::class);
-        yield MenuItem::linkToCrud('admin.menu.project_images', 'fa fa-image', \App\Entity\ProjectImage::class);
-        yield MenuItem::linkToCrud('admin.menu.project_tags', 'fa fa-tag', \App\Entity\ProjectTag::class);
 
         yield MenuItem::section();
         yield MenuItem::linkToUrl('admin.menu.back_to_site', 'fa fa-arrow-left', '/');

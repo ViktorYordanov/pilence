@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProjectTagRepository::class)]
 #[ORM\Table(name: 'project_tag')]
-#[ORM\UniqueConstraint(name: 'UNIQ_PROJECT_TAG', fields: ['project_id', 'tag_slug'])]
+#[ORM\UniqueConstraint(name: 'UNIQ_PROJECT_TAG', fields: ['project_id', 'tag_id'])]
 class ProjectTag
 {
     #[ORM\Id]
@@ -19,8 +19,9 @@ class ProjectTag
     #[ORM\JoinColumn(nullable: false)]
     private ?Project $project = null;
 
-    #[ORM\Column(name: 'tag_slug', length: 255)]
-    private ?string $tagSlug = null;
+    #[ORM\ManyToOne(targetEntity: Tag::class, inversedBy: 'projectTags')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Tag $tag = null;
 
     public function getId(): ?int
     {
@@ -39,20 +40,20 @@ class ProjectTag
         return $this;
     }
 
-    public function getTagSlug(): ?string
+    public function getTag(): ?Tag
     {
-        return $this->tagSlug;
+        return $this->tag;
     }
 
-    public function setTagSlug(string $tagSlug): static
+    public function setTag(?Tag $tag): static
     {
-        $this->tagSlug = $tagSlug;
+        $this->tag = $tag;
 
         return $this;
     }
 
     public function __toString(): string
     {
-        return $this->tagSlug ?? '';
+        return $this->tag?->getNameBg() ?? '';
     }
 }
